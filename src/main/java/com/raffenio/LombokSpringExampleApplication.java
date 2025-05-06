@@ -8,6 +8,7 @@ public class LombokSpringExampleApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LombokSpringExampleApplication.class, args);
+		System.out.println("Hello World!");
 	}
 
 }
