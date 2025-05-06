@@ -14,9 +14,10 @@ public class LombokSpringExampleApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(LombokSpringExampleApplication.class, args);
-		val() ;
+		var() ;
 		
 	}
+		
 	
 	/**
 	 * val is a Lombok constant basically
@@ -34,6 +35,30 @@ public class LombokSpringExampleApplication {
 		
 		log.info("username : {} has this class: {} ",username,username.getClass().getName());  //  username : @raffenio has this class: java.lang.String 
 			
+	}
+	
+	
+	/**
+	 * var is a Lombok variable basically
+	 * 
+	 * java 10 introduced var keyword which is similar to var
+	 * 
+	 * var example
+	 *
+     * this is basically variables with no type defined, it will auto detect 
+     * the type and will assign it to the variable field
+	 */
+	private static void var() {
+
+		var profileDescription="Geek, developer and cool";  //lombok variable
+		log.info("profileDescription : {} of type of : {}",profileDescription,profileDescription.getClass().getName()); // profileDescription : Geek, developer and cool of type of : java.lang.String
+		
+		profileDescription="And i like Dragon ball";  //lombok variable, this is permitted
+		log.info("profileDescription : {} of type of : {}",profileDescription,profileDescription.getClass().getName()); // profileDescription : And i like Dragon ball of type of : java.lang.String
+		
+		//This will cause and issue as the type is not a string
+		//profileDescription=new ArrayList<>(); 
+		
 	}
 
 }
