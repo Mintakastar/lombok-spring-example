@@ -14,17 +14,26 @@ public class LombokSpringExampleApplication {
 	
 	public static void main(String[] args) {
 		SpringApplication.run(LombokSpringExampleApplication.class, args);
+		val() ;
 		
+	}
+	
+	/**
+	 * val is a Lombok constant basically
+	 */
+	private static void val() {
+
 		final String username1="@raffenio"; 
-		log.info("username : {} ",username1);
+		log.info("username : {} ",username1); // username : @raffenio  
 		
 		//username1="@raffenio"; this fails as this is a final string
 		
 		val username="@raffenio";  //lombok constant
-		log.info("username : {} ",username);
-		//username=""; this fails as this is a lombok variable
+		log.info("username : {} ",username); // username : @raffenio 
+		//username=""; this fails as this is a lombok constant
 		
-		
+		log.info("username : {} has this class: {} ",username,username.getClass().getName());  //  username : @raffenio has this class: java.lang.String 
+			
 	}
 
 }
