@@ -79,11 +79,11 @@ public class LombokSpringExampleApplication {
 
 	
 	/**
-	 * NonNull example
-	 * 
-	 * This is a non-nullable field, if the field is null it will throw an exception
-	 * @see  https://projectlombok.org/features/NonNull
-	 */
+     * NonNull example
+     *
+     * This is a non-nullable field, if the field is null it will throw an exception
+     * @see  <a href="https://projectlombok.org/features/NonNull">...</a>
+     */
 	private static void nonNull() {
 		log.info("");
 		log.info("nonNull example");
@@ -143,7 +143,7 @@ public class LombokSpringExampleApplication {
 			writerLombok.write("Hi Raffenio Friends!", "friends.txt");
 
 			// IMPORTANT NOTE: lombok will automatically close the resources
-		} catch (IOException e) {
+		} catch (Exception e) { //No need to catch IOException, as lombok will handle it
 			log.error("Error: {}", e.getMessage());
 		}
 
@@ -158,7 +158,7 @@ public class LombokSpringExampleApplication {
 			writerNCLombok.write("Hi Raffenio Friends!", "friends.txt");
 
 			// IMPORTANT NOTE: lombok will automatically close the resources
-		} catch (IOException e) {
+		} catch (Exception e) { //No need to catch IOException, as lombok will handle it
 			log.error("Error: {}", e.getMessage());
 		}
 
