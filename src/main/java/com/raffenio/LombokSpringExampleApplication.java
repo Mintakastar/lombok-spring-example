@@ -2,6 +2,7 @@
 
 import java.io.IOException;
 
+import com.raffenio.model.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +26,7 @@ public class LombokSpringExampleApplication {
 		var();
 		nonNull();
 		cleanUp();
+		gettersAndSetters();
 		
 	}
 		
@@ -165,4 +167,34 @@ public class LombokSpringExampleApplication {
 				
 		log.info("---------------------------------");
 	}
+
+	private static void gettersAndSetters() {
+		log.info("");
+		log.info("gettersAndSetters example");
+		log.info("-------------------------");
+
+		Person p= new Person();
+		p.setAlive(true);
+		p.setName("Raffenio");
+		p.setLastName("Dev");
+
+
+		log.info("Name: {}, LastName: {}, Alive: {}",p.getName(),p.getLastName(),p.isAlive());
+		//p.setNickname("Raffy");  //fails as this is private
+		//p.getNickname(); //fails as this is private
+		p.foo();//prints the nickname, using the private method internally
+
+		log.info("---------------------------------");
+	}
+
+	private static void asdf() {
+		log.info("");
+		log.info("asdf example");
+		log.info("---------------");
+
+		//code here
+
+		log.info("---------------------------------");
+	}
+
 }
